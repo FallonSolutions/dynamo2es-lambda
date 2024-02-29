@@ -56,16 +56,15 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "@aws-sdk/util-dynamodb": "^3.523.0",
     "@hapi/joi": "^15.1.0",
     "lodash": "^4.17.15",
     "promise-retry": "^1.1.1"
   },
   "peerDependencies": {
-    "@elastic/elasticsearch": "7.13.0",
-    "aws-sdk": "^2.514.0"
+    "@elastic/elasticsearch": "7.13.0"
   },
   "devDependencies": {
-    "aws-sdk": "^2.514.0",
     "chai": "^4.2.0",
     "chai-subset": "^1.6.0",
     "elasticsearch": "^16.3.0",

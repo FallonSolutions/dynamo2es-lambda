@@ -1,4 +1,4 @@
-const DynamoDB = require('aws-sdk/clients/dynamodb');
+const { marshall } = require('@aws-sdk/util-dynamodb');
 const uuid = require('uuid');
 
 module.exports = function(records) {
@@ -21,9 +21,9 @@ module.exports = function(records) {
         eventName,
         eventSource: 'aws:dynamodb',
         dynamodb: {
-          Keys: DynamoDB.Converter.marshall(keys),
-          NewImage: newImage ? DynamoDB.Converter.marshall(newImage) : undefined,
-          OldImage: oldImage ? DynamoDB.Converter.marshall(oldImage) : undefined,
+          Keys: marshall(keys),
+          NewImage: newImage ? marshall(newImage) : undefined,
+          OldImage: oldImage ? marshall(oldImage) : undefined,
           StreamViewType: 'NEW_AND_OLD_IMAGES'
         }
       };
